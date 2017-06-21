@@ -1,0 +1,6 @@
+[submodule "ImageEditor"]
+	path = ImageEditor
+	url = https://github.com/hubcin/android-image-editor.git
+[submodule "widgets"]
+	path = widgets
+	url = https://github.com/hubcin/android-widgets.git
