@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 
 import com.zuga.advancedtextview.VerticalEditText;
-import com.zuga.imageedit.ImageEditParams;
+import com.zuga.imageedit.ImageEditor;
 import com.zuga.imageedit.activites.PermissionActivity;
 import com.zuga.keyboard.CandidateView;
 import com.zuga.keyboard.ZugaKeyboardView;
@@ -45,12 +45,12 @@ public class TextEditActivity extends PermissionActivity implements View.OnClick
         mKeyboardView.register(vTextEditor, mCandidateView);
         Intent intent = getIntent();
         if (intent == null) return;
-        if (!intent.hasExtra(ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT)) return;
-        if (!intent.hasExtra(ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT_COLOR)) return;
+        if (!intent.hasExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT)) return;
+        if (!intent.hasExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT_COLOR)) return;
         vTextEditor.setTextColor(intent.getIntExtra(
-                ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT_COLOR, Color.BLACK));
+                ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT_COLOR, Color.BLACK));
         vTextEditor.setText(intent.getStringExtra(
-                ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT));
+                ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_DEFAULT));
     }
 
     @Override
@@ -62,8 +62,8 @@ public class TextEditActivity extends PermissionActivity implements View.OnClick
         }
         String content = String.valueOf(text);
         Intent intent = new Intent();
-        intent.putExtra(ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT, content);
-        intent.putExtra(ImageEditParams.EXTRA_TEXT_EDITOR_CONTENT_COLOR, Color.RED);
+        intent.putExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT, content);
+        intent.putExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_COLOR, Color.RED);
         setResult(RESULT_OK, intent);
         finish();
     }

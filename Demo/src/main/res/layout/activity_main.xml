@@ -2,35 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#d71414"
     android:orientation="vertical">
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="chooseImage"
-        android:text="Choose Image" />
+        android:onClick="edit"
+        android:text="edit" />
 
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:onClick="gone"
-        android:text="gone" />
+        android:onClick="crop"
+        android:text="crop" />
 
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="invisible"
-        android:text="invisible" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:onClick="visible"
-        android:text="visible" />
-
-    <com.zuga.study.canvas.TestView
-        android:id="@+id/tv_test"
+    <ImageView
+        android:id="@+id/iv_after"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+
 </LinearLayout>
