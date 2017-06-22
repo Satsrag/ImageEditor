@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--bottom clicked or selected-->
+    <color name="ie_primary_light">#3a8cf1</color>
+    <!--ToolBar-->
+    <color name="colorPrimary">#252526</color>
+    <color name="colorPrimaryDark">#060606</color>
     <color name="colorAccent">#FF4081</color>
 </resources>

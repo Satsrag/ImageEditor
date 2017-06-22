@@ -1,6 +1,6 @@
 # ImageEditor
 
-* Support scrawl, emoji, Mongolian text, cutting, filter, mosaic, and so on. This library is only Demo, rely on closed source library.
+* Support scrawl, emoji, Mongolian text, cutting, filter, mosaic, and so on.
 
 # Usage    [go to demo](https://github.com/Saqrag/ImageEditor)
 
@@ -62,3 +62,12 @@
             setResult(RESULT_OK, intent);
             finish();
         ```
+
+* match theme
+
+    ```xml
+        <!--bottom clicked or selected-->
+        <color name="ie_primary_light">#3a8cf1</color>
+        <!--ToolBar-->
+        <color name="colorPrimary">#252526</color>
+    ```
