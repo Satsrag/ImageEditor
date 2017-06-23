@@ -4,15 +4,36 @@
 
 # Usage    [go to demo](https://github.com/Saqrag/ImageEditor)
 
-* start Editor or Cropper, Uri is starting with "Content://" and gotten from ContentProvider.
+* start Editor or Cropper, Uri is starting with "Content://" and gotten from ContentProvider. and url is gotten from uri.
 
     ```java
         private void startEdit(Uri uri) {
-            ImageEditor.startEdit(activity, uri);
+            if (vRadioUri.isChecked()) {
+                ImageEditor.startEdit(this, uri);
+            } else if (vRadioUrl.isChecked()) {
+                ImageEditor.startEdit(this, getPath(uri));
+            }
         }
-
+    
         private void startCrop(Uri uri) {
-            ImageEditor.startCrop(activity, uri);
+            if (vRadioUri.isChecked()) {
+                ImageEditor.startCrop(this, uri);
+            } else if (vRadioUrl.isChecked()) {
+                ImageEditor.startCrop(this, getPath(uri));
+            }
+        }
+    
+        private String getPath(Uri uri) {
+            String filePath;
+            String[] filePathColumn = {MediaStore.MediaColumns.DATA};
+    
+            Cursor cursor = getContentResolver().query(uri, filePathColumn, null, null, null);
+            if (cursor == null) return null;
+            cursor.moveToFirst();
+            int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+            filePath = cursor.getString(columnIndex);
+            cursor.close();
+            return filePath;
         }
     ```
 
