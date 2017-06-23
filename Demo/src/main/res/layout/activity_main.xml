@@ -17,6 +17,25 @@
         android:onClick="crop"
         android:text="crop" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_uri"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="Uri" />
+
+        <RadioButton
+            android:id="@+id/rb_url"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="url" />
+    </RadioGroup>
+
     <ImageView
         android:id="@+id/iv_after"
         android:layout_width="match_parent"
