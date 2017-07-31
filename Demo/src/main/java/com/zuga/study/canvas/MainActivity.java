@@ -67,9 +67,9 @@ public class MainActivity extends PermissionActivity {
 
     private void startEdit(Uri uri) {
         if (vRadioUri.isChecked()) {
-            ImageEditor.startEdit(this, uri);
+            ImageEditor.startEdit(this, uri, R.mipmap.back, R.mipmap.done);
         } else if (vRadioUrl.isChecked()) {
-            ImageEditor.startEdit(this, getPath(uri));
+            ImageEditor.startEdit(this, getPath(uri), R.mipmap.back, R.mipmap.done);
         }
     }
 
