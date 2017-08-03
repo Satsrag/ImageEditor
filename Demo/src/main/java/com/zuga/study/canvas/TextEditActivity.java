@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -16,7 +14,7 @@ import android.widget.ImageView;
 import com.zuga.advancedtextview.VerticalEditText;
 import com.zuga.imageedit.ImageEditor;
 import com.zuga.imageedit.activites.PermissionActivity;
-import com.zuga.imageedit.adapter.ScrawlAdapter;
+import com.zuga.imageedit.adapter.ColorAdapter;
 import com.zuga.keyboard.CandidateView;
 import com.zuga.keyboard.ZugaKeyboardView;
 
@@ -28,7 +26,7 @@ import com.zuga.keyboard.ZugaKeyboardView;
  * @since 1.0
  **/
 
-public class TextEditActivity extends PermissionActivity implements View.OnClickListener, ScrawlAdapter.ColorChangeListener {
+public class TextEditActivity extends PermissionActivity implements View.OnClickListener, ColorAdapter.ColorChangeListener {
     private VerticalEditText vTextEditor;
     private int mColor = 0;
 
@@ -46,14 +44,6 @@ public class TextEditActivity extends PermissionActivity implements View.OnClick
         FrameLayout mContainer = (FrameLayout) findViewById(R.id.edit_area);
         View editor = LayoutInflater.from(this).inflate(R.layout.activity_text_editor, mContainer, true);
         vTextEditor = (VerticalEditText) editor.findViewById(R.id.ve_text_editor);
-        RecyclerView vColor = (RecyclerView) editor.findViewById(R.id.rv_color);
-        vColor.setHasFixedSize(true);
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this
-                , LinearLayoutManager.HORIZONTAL, false);
-        vColor.setLayoutManager(linearLayoutManager);
-        ScrawlAdapter scrawlAdapter = new ScrawlAdapter(null, this);
-        vColor.setAdapter(scrawlAdapter);
-        scrawlAdapter.notifyDataSetChanged();
         ImageView tlDown = (ImageView) editor.findViewById(R.id.tb_done);
         tlDown.setOnClickListener(this);
         mKeyboardView.register(vTextEditor, mCandidateView);
@@ -78,7 +68,6 @@ public class TextEditActivity extends PermissionActivity implements View.OnClick
         String content = String.valueOf(text);
         Intent intent = new Intent();
         intent.putExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT, content);
-        intent.putExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT_COLOR, mColor);
         setResult(RESULT_OK, intent);
         finish();
     }
