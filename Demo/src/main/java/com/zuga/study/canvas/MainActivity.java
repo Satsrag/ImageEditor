@@ -75,9 +75,9 @@ public class MainActivity extends PermissionActivity {
 
     private void startCrop(Uri uri) {
         if (vRadioUri.isChecked()) {
-            ImageEditor.startCrop(this, uri);
+            ImageEditor.startCrop(this, uri, 1, 1);
         } else if (vRadioUrl.isChecked()) {
-            ImageEditor.startCrop(this, getPath(uri));
+            ImageEditor.startCrop(this, getPath(uri), 2, 1);
         }
     }
 
