@@ -68,6 +68,7 @@ public class TextEditActivity extends PermissionActivity implements View.OnClick
         String content = String.valueOf(text);
         Intent intent = new Intent();
         intent.putExtra(ImageEditor.EXTRA_TEXT_EDITOR_CONTENT, content);
+        intent.putExtra(ImageEditor.ExtRA_TEXT_EDITOR_CONTENT_FONT_PATH, "fonts/qagan");
         setResult(RESULT_OK, intent);
         finish();
     }
