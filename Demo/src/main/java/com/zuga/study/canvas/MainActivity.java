@@ -65,6 +65,10 @@ public class MainActivity extends PermissionActivity {
         chooseImage();
     }
 
+    public void testCanvas(View view) {
+        startActivity(new Intent(this, TestCanvasActivity.class));
+    }
+
     private void startEdit(Uri uri) {
         if (vRadioUri.isChecked()) {
             ImageEditor.startEdit(this, uri, R.mipmap.back, R.mipmap.done);

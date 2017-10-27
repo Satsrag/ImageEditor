@@ -18,15 +18,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <activity
             android:name=".TextEditActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="com.zuga.image.edit.text.editor" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity android:name=".TestCanvasActivity"></activity>
     </application>
 
 </manifest>

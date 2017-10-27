@@ -17,6 +17,12 @@
         android:onClick="crop"
         android:text="crop" />
 
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="testCanvas"
+        android:text="testCanvas" />
+
     <RadioGroup
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
