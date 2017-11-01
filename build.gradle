@@ -15,6 +15,13 @@ buildscript {
 
 allprojects {
     repositories {
+        maven {
+            url 'http://web.zuga-tech.net:8081/nexus/content/repositories/android-private-lib/'
+            credentials {
+                username user
+                password pass
+            }
+        }
         jcenter()
         maven { url "https://jitpack.io" }
         google()

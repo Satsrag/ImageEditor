@@ -1,1 +1,1 @@
-include ':Demo',':ImageEditor',':widgets'
+include ':Demo', ':ImageEditor', ':widgets'
