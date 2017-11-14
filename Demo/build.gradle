@@ -29,7 +29,7 @@ dependencies {
     implementation project(':ImageEditor')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:recyclerview-v7:26.1.0'
-    implementation 'com.github.Saqrag:Log:1.0.0'
+
     implementation 'com.readystatesoftware.systembartint:systembartint:1.0.3'
     implementation 'com.github.yalantis:ucrop:2.2.1'
     implementation 'com.zuga:widgets:1.0.2'
